@@ -229,6 +229,10 @@ USE_TZ = True
 # for environment variables
 NEWS_NEWS_API_KEY = environ.get('NEWS_NEWS_API_KEY')
 
+OPEN_AI_API_KEY = environ.get('OPENAI_API_KEY')
+DEEPSEEK_API_KEY = environ.get('DEEPSEEK_API_KEY')
+GEMINI_API_KEY = environ.get('GEMINI_API_KEY')
+ANTHROPIC_API_KEY = environ.get('ANTHROPIC_API_KEY')
 
 
 # Static files (CSS, JavaScript, Images)
