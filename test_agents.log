@@ -1,0 +1,100 @@
+2025-07-30 03:15:07,645 - ai.agents.base - INFO - User Profiler Agent initialized with LLM: model='models/gemini-2.0-flash' google_api_key=SecretStr('**********') temperature=0.1 max_retries=1 client=<google.ai.generativelanguage_v1beta.services.generative_service.client.GenerativeServiceClient object at 0x126578d30> default_metadata=() model_kwargs={}
+2025-07-30 03:15:07,683 - ai.agents.base - INFO - News Fetcher Agent initialized with LLM: model='models/gemini-2.0-flash' google_api_key=SecretStr('**********') temperature=0.1 max_retries=1 client=<google.ai.generativelanguage_v1beta.services.generative_service.client.GenerativeServiceClient object at 0x126578d30> default_metadata=() model_kwargs={}
+2025-07-30 03:15:07,685 - ai.agents.news_fetcher - INFO - Fetching news from all active sources: ['ITHOME', 'TMTPost', 'TechCrunch', 'The Economic Observer', 'The Verge', 'sspai', '中新网']
+2025-07-30 03:15:07,686 - ai.agents.news_fetcher - INFO - 正在从RSS源获取新闻...
+2025-07-30 03:15:08,311 - ai.agents.news_fetcher - INFO - Article already exists: https://www.ithome.com/0/871/727.htm
+2025-07-30 03:15:08,312 - ai.agents.news_fetcher - INFO - Article already exists: https://www.ithome.com/0/871/718.htm
+2025-07-30 03:15:08,312 - ai.agents.news_fetcher - INFO - Article already exists: https://www.ithome.com/0/871/724.htm
+2025-07-30 03:15:08,312 - ai.agents.news_fetcher - INFO - Article already exists: https://www.ithome.com/0/871/723.htm
+2025-07-30 03:15:08,313 - ai.agents.news_fetcher - INFO - Article already exists: https://www.ithome.com/0/871/722.htm
+2025-07-30 03:15:08,313 - ai.agents.news_fetcher - INFO - 正在抓取文章内容: https://www.ithome.com/0/871/720.htm
+2025-07-30 03:15:08,315 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.ithome.com:443
+2025-07-30 03:15:08,617 - urllib3.connectionpool - DEBUG - https://www.ithome.com:443 "GET /0/871/720.htm HTTP/1.1" 200 None
+2025-07-30 03:15:08,742 - jieba - DEBUG - Building prefix dict from /Users/songyang/agentServer/venv/lib/python3.9/site-packages/jieba/dict.txt ...
+2025-07-30 03:15:08,742 - jieba - DEBUG - Loading model from cache /var/folders/tb/62dfcghs3z16fnn72_knb69m0000gn/T/jieba.cache
+2025-07-30 03:15:09,179 - jieba - DEBUG - Loading model cost 0.4366729259490967 seconds.
+2025-07-30 03:15:09,179 - jieba - DEBUG - Prefix dict has been built succesfully.
+2025-07-30 03:15:09,183 - ai.agents.common_tools - INFO - 成功使用newspaper3k提取内容: 638字符
+2025-07-30 03:15:09,184 - ai.agents.news_fetcher - INFO - 抓取内容长度: 638 字符
+2025-07-30 03:15:09,184 - ai.agents.news_fetcher - INFO - 正在保存新闻到数据库...
+2025-07-30 03:15:09,188 - ai.agents.news_fetcher - INFO - Fetched article: LG 新能源与特斯拉签署 43 亿美元磷酸铁锂电池供应协议 from ITHOME
+2025-07-30 03:15:09,188 - ai.agents.news_fetcher - INFO - 开始生成新闻嵌入向量...LG 新能源与特斯拉签署 43 亿美元磷酸铁锂电池供应协议
+2025-07-30 03:15:09,188 - ai.vector.news_vector_excutor - INFO - 开始处理新闻文章: LG 新能源与特斯拉签署 43 亿美元磷酸铁锂电池供应协议 (ID: 180)
+2025-07-30 03:15:09,188 - ai.vector.news_vector_excutor - INFO - 准备嵌入文本，长度: 1549 字符
+2025-07-30 03:15:09,188 - ai.vector.pgvector_client - INFO - 添加文档到向量存储: ID 180, 文本长度 1549
+2025-07-30 03:15:09,190 - ai.vector.pgvector_client - INFO - 为文档 180 生成嵌入向量
+2025-07-30 03:15:09,190 - ai.vector.pgvector_client - INFO - 开始生成嵌入向量，文本长度: 1549
+2025-07-30 03:15:09,190 - ai.vector.pgvector_client - INFO - 使用直接嵌入方法 (文本 <= 8000)
+2025-07-30 03:15:09,191 - ai.vector.pgvector_client - INFO - 正在调用嵌入模型API...
+2025-07-30 03:15:09,915 - ai.vector.pgvector_client - INFO - 嵌入向量生成成功，维度: 768
+2025-07-30 03:15:09,924 - ai.vector.pgvector_client - INFO - 成功添加嵌入向量到文档 180, 维度: 768
+2025-07-30 03:15:09,924 - ai.vector.news_vector_excutor - INFO - 成功添加新闻文章 180 到向量存储
+2025-07-30 03:15:09,925 - ai.agents.news_fetcher - INFO - 结束生成新闻嵌入向量...LG 新能源与特斯拉签署 43 亿美元磷酸铁锂电池供应协议
+2025-07-30 03:15:09,927 - ai.agents.news_fetcher - INFO - 正在抓取文章内容: https://www.ithome.com/0/871/705.htm
+2025-07-30 03:15:09,932 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.ithome.com:443
+2025-07-30 03:15:10,178 - urllib3.connectionpool - DEBUG - https://www.ithome.com:443 "GET /0/871/705.htm HTTP/1.1" 200 None
+2025-07-30 03:15:10,216 - ai.agents.common_tools - INFO - 成功使用newspaper3k提取内容: 637字符
+2025-07-30 03:15:10,217 - ai.agents.news_fetcher - INFO - 抓取内容长度: 637 字符
+2025-07-30 03:15:10,217 - ai.agents.news_fetcher - INFO - 正在保存新闻到数据库...
+2025-07-30 03:15:10,220 - ai.agents.news_fetcher - INFO - Fetched article: 橙色 iPhone 17 Pro 上手视频曝光：苹果 Logo 下移，辨识度更高 from ITHOME
+2025-07-30 03:15:10,220 - ai.agents.news_fetcher - INFO - 开始生成新闻嵌入向量...橙色 iPhone 17 Pro 上手视频曝光：苹果 Logo 下移，辨识度更高
+2025-07-30 03:15:10,220 - ai.vector.news_vector_excutor - INFO - 开始处理新闻文章: 橙色 iPhone 17 Pro 上手视频曝光：苹果 Logo 下移，辨识度更高 (ID: 181)
+2025-07-30 03:15:10,220 - ai.vector.news_vector_excutor - INFO - 准备嵌入文本，长度: 2461 字符
+2025-07-30 03:15:10,220 - ai.vector.pgvector_client - INFO - 添加文档到向量存储: ID 181, 文本长度 2461
+2025-07-30 03:15:10,221 - ai.vector.pgvector_client - INFO - 为文档 181 生成嵌入向量
+2025-07-30 03:15:10,221 - ai.vector.pgvector_client - INFO - 开始生成嵌入向量，文本长度: 2461
+2025-07-30 03:15:10,221 - ai.vector.pgvector_client - INFO - 使用直接嵌入方法 (文本 <= 8000)
+2025-07-30 03:15:10,221 - ai.vector.pgvector_client - INFO - 正在调用嵌入模型API...
+2025-07-30 03:15:10,877 - ai.vector.pgvector_client - INFO - 嵌入向量生成成功，维度: 768
+2025-07-30 03:15:10,884 - ai.vector.pgvector_client - INFO - 成功添加嵌入向量到文档 181, 维度: 768
+2025-07-30 03:15:10,884 - ai.vector.news_vector_excutor - INFO - 成功添加新闻文章 181 到向量存储
+2025-07-30 03:15:10,885 - ai.agents.news_fetcher - INFO - 结束生成新闻嵌入向量...橙色 iPhone 17 Pro 上手视频曝光：苹果 Logo 下移，辨识度更高
+2025-07-30 03:15:10,886 - ai.agents.news_fetcher - INFO - 正在抓取文章内容: https://www.ithome.com/0/871/717.htm
+2025-07-30 03:15:10,891 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.ithome.com:443
+2025-07-30 03:15:11,143 - urllib3.connectionpool - DEBUG - https://www.ithome.com:443 "GET /0/871/717.htm HTTP/1.1" 200 None
+2025-07-30 03:15:11,186 - ai.agents.common_tools - INFO - 成功使用newspaper3k提取内容: 391字符
+2025-07-30 03:15:11,187 - ai.agents.news_fetcher - INFO - 抓取内容长度: 391 字符
+2025-07-30 03:15:11,187 - ai.agents.news_fetcher - INFO - 正在保存新闻到数据库...
+2025-07-30 03:15:11,188 - ai.agents.news_fetcher - INFO - Fetched article: EA《战地风云 6》游戏坦克实机演示视频曝光，有望 8 月 8 日公测 from ITHOME
+2025-07-30 03:15:11,188 - ai.agents.news_fetcher - INFO - 开始生成新闻嵌入向量...EA《战地风云 6》游戏坦克实机演示视频曝光，有望 8 月 8 日公测
+2025-07-30 03:15:11,188 - ai.vector.news_vector_excutor - INFO - 开始处理新闻文章: EA《战地风云 6》游戏坦克实机演示视频曝光，有望 8 月 8 日公测 (ID: 182)
+2025-07-30 03:15:11,188 - ai.vector.news_vector_excutor - INFO - 准备嵌入文本，长度: 1389 字符
+2025-07-30 03:15:11,188 - ai.vector.pgvector_client - INFO - 添加文档到向量存储: ID 182, 文本长度 1389
+2025-07-30 03:15:11,189 - ai.vector.pgvector_client - INFO - 为文档 182 生成嵌入向量
+2025-07-30 03:15:11,189 - ai.vector.pgvector_client - INFO - 开始生成嵌入向量，文本长度: 1389
+2025-07-30 03:15:11,189 - ai.vector.pgvector_client - INFO - 使用直接嵌入方法 (文本 <= 8000)
+2025-07-30 03:15:11,189 - ai.vector.pgvector_client - INFO - 正在调用嵌入模型API...
+2025-07-30 03:15:11,757 - ai.vector.pgvector_client - INFO - 嵌入向量生成成功，维度: 768
+2025-07-30 03:15:11,769 - ai.vector.pgvector_client - INFO - 成功添加嵌入向量到文档 182, 维度: 768
+2025-07-30 03:15:11,769 - ai.vector.news_vector_excutor - INFO - 成功添加新闻文章 182 到向量存储
+2025-07-30 03:15:11,772 - ai.agents.news_fetcher - INFO - 结束生成新闻嵌入向量...EA《战地风云 6》游戏坦克实机演示视频曝光，有望 8 月 8 日公测
+2025-07-30 03:15:11,772 - ai.agents.news_fetcher - INFO - Reached limit of 3 new articles. Stopping fetch.
+2025-07-30 03:15:11,774 - ai.agents.news_fetcher - INFO - Reached limit of 3 new articles. Stopping fetch.
+2025-07-30 03:15:11,775 - ai.agents.base - INFO - News Filter and Prioritizer Agent initialized with LLM: model='models/gemini-2.0-flash' google_api_key=SecretStr('**********') temperature=0.1 max_retries=1 client=<google.ai.generativelanguage_v1beta.services.generative_service.client.GenerativeServiceClient object at 0x126578d30> default_metadata=() model_kwargs={}
+2025-07-30 03:15:11,779 - ai.agents.news_filter - INFO - Using provided news candidates: 2 articles
+2025-07-30 03:15:11,779 - ai.agents.news_filter - INFO - Re-ranking news articles using AI model.
+2025-07-30 03:15:13,278 - ai.agents.news_filter - DEBUG - LLM response raw content: ```json
+[
+  {
+    "id": 1,
+    "relevance_score": 50,
+    "relevance_reason": "用户未指定偏好主题，AI技术属于科技领域，具有一定相关性。"
+  },
+  {
+    "id": 2,
+    "relevance_score": 50,
+    "relevance_reason": "用户未指定偏好主题，新能源汽车属于科技和汽车领域，具有一定相关性。"
+  }
+]
+```...
+2025-07-30 03:15:13,278 - ai.agents.news_filter - DEBUG - Extracted JSON: [
+  {
+    "id": 1,
+    "relevance_score": 50,
+    "relevance_reason": "用户未指定偏好主题，AI技术属于科技领域，具有一定相关性。"
+  },
+  {
+    "id": 2,
+    "relevance_score": 50,
+    "relevance_reason": "用户未指定偏好主题，新能源汽车属于科技和汽车领域...
+2025-07-30 03:15:13,278 - ai.agents.news_filter - INFO - AI re-ranking completed. Selected 2 articles.

@@ -7,11 +7,11 @@ from agentrtw.settings import ANTHROPIC_API_KEY as settings_ANTHROPIC_API_KEY
 import os
 
 # Constants for LLM providers and configurations
-OPENAI = 'openai'
-LLAMA = 'llama'
-GEMINI = 'gemini'
-ANTHROPIC = 'anthropic'
-DEEPSEEK = 'deepseek'
+OPENAI = 'OPENAI'
+LLAMA = 'LLAMA'
+GEMINI = 'GEMINI'
+ANTHROPIC = 'ANTHROPIC'
+DEEPSEEK = 'DEEPSEEK'
 
 KEY_CHAT_MODEL_NAME = 'chat_model'
 KEY_EMBEDDING_MODEL_NAME = 'embedding_model'
@@ -24,44 +24,41 @@ DEEPSEEK_API_KEY = settings_DEEPSEEK_API_KEY
 GEMINI_API_KEY = settings_GEMINI_API_KEY
 ANTHROPIC_API_KEY = settings_ANTHROPIC_API_KEY
 
-DEFAULT_CHAT_MODEL_PROVIDER = "DEFAULT_CHAT_MODEL_PROVIDER"
-DEFAULT_EMBEDDING_MODEL_PROVIDER = "DEFAULT_EMBEDDING_MODEL_PROVIDER"
+# 直接指向提供商常量，而不是字符串
+DEFAULT_CHAT_MODEL_PROVIDER = GEMINI
+DEFAULT_EMBEDDING_MODEL_PROVIDER = GEMINI
 
 LLM_CONFIGS = {
-    "DEFAULT_CHAT_MODEL_PROVIDER": OPENAI,
-    "DEFAULT_EMBEDDING_MODEL_PROVIDER": OPENAI,
-
-    OPENAI: {
+    OPENAI: {  # 使用大写常量
         KEY_CHAT_MODEL_NAME: 'gpt-3.5-turbo',
-        KEY_EMBEDDING_MODEL_NAME: 'gpt-4',
+        KEY_EMBEDDING_MODEL_NAME: 'text-embedding-ada-002',
         KEY_API_KEY: OPENAI_API_KEY,
-        KEY_TEMPERATURE: '0.1',
+        KEY_TEMPERATURE: 0.1,
     },
 
     DEEPSEEK: {
-        KEY_CHAT_MODEL_NAME: 'deepseek-chat-1',
-        KEY_EMBEDDING_MODEL_NAME: 'deepseek-embedding-1',
+        KEY_CHAT_MODEL_NAME: 'deepseek-chat',
+        KEY_EMBEDDING_MODEL_NAME: 'deepseek-embedding',
         KEY_API_KEY: DEEPSEEK_API_KEY,
-        KEY_TEMPERATURE: '0.1',
+        KEY_TEMPERATURE: 0.1,
     },
 
     GEMINI: {
-        KEY_CHAT_MODEL_NAME: 'gemini-1.5-flash',
-        KEY_EMBEDDING_MODEL_NAME: 'gemini-1.5-flash-embedding',
+        KEY_CHAT_MODEL_NAME: 'gemini-2.0-flash',
+        KEY_EMBEDDING_MODEL_NAME: 'models/text-embedding-004',
         KEY_API_KEY: GEMINI_API_KEY,
-        KEY_TEMPERATURE: '0.1',
+        KEY_TEMPERATURE: 0.1,
     },
 
     ANTHROPIC: {
-        KEY_CHAT_MODEL_NAME: 'claude-2',
-        KEY_EMBEDDING_MODEL_NAME: 'claude-embed-20240229',
+        KEY_CHAT_MODEL_NAME: 'claude-3-sonnet-20240229',
+        KEY_EMBEDDING_MODEL_NAME: None,
         KEY_API_KEY: ANTHROPIC_API_KEY,
-        KEY_TEMPERATURE: '0.1',
+        KEY_TEMPERATURE: 0.1,
     }
 }
 
 # LLM provider configuration
 LLM_PROVIDER = OPENAI
-
 
 LLM_CACHE_ENABLED = True

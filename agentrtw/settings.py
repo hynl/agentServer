@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'django.contrib.postgres',
+    'pgvector.django',
 ]
 
 MIDDLEWARE = [
@@ -229,7 +230,7 @@ USE_TZ = True
 # for environment variables
 NEWS_NEWS_API_KEY = environ.get('NEWS_NEWS_API_KEY')
 
-OPEN_AI_API_KEY = environ.get('OPENAI_API_KEY')
+OPENAI_API_KEY = environ.get('OPENAI_API_KEY')
 DEEPSEEK_API_KEY = environ.get('DEEPSEEK_API_KEY')
 GEMINI_API_KEY = environ.get('GEMINI_API_KEY')
 ANTHROPIC_API_KEY = environ.get('ANTHROPIC_API_KEY')

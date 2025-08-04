@@ -1,0 +1,13 @@
+Django~=5.2
+djangorestframework
+django-environ
+psycopg2-binary # PostgreSQL adapter
+django-allauth
+dj-rest-auth
+djangorestframework-simplejwt
+celery
+redis # Python client for Redis
+langchain-openai # For LLM and embeddings
+beautifulsoup4 # For web scraping
+feedparser # For RSS parsing
+pgvector # Python client for pgvector integration with Django ORM

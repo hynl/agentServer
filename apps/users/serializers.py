@@ -7,7 +7,6 @@ User = get_user_model()
 
 
 class UserPublicSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = User
         fields = (
